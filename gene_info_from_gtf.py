@@ -86,14 +86,14 @@ def process_gtf(file, output):
     exon_df.columns = ['symbol', 'length']
 
     print("Exon length calculation completed. Saving results.")
-    exon_df.to_csv(output)
+    exon_df.to_csv(output, sep='\t', index_label='gene_id', header=['gene_name', 'exon_length'])
 
 
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser()
     parser.add_argument('--gtf', '-f', help='gtf file', required=True)
-    parser.add_argument('--output', '-o', help='Output filename', default="./gtf.info.csv")
+    parser.add_argument('--output', '-o', help='Output filename', default="./v22.info.csv")
     args = parser.parse_args()
 
     try:
