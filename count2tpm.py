@@ -21,7 +21,7 @@ def process_count(file, ref, output):
     print("Start calculating...")
     tpmdf = df.apply(calc, axis=0, args=(refdf['exon_length'],))
     print("Saving...")
-    tpmdf.to_csv(output)
+    tpmdf.to_csv(output, sep="\t")
 
 
 
